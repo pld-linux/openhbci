@@ -1,0 +1,11 @@
+--- openhbci-0.9.17/src/openhbci/openhbci-config.in.in.orig	2003-05-18 23:46:36.000000000 +0200
++++ openhbci-0.9.17/src/openhbci/openhbci-config.in.in	2005-03-27 15:56:48.836843952 +0200
+@@ -9,7 +9,7 @@
+ 	    result="$result @PROGRAM_INCLUDES@ -I$dir/include"
+ 	    ;;
+ 	--libraries)
+-	    result="$result -L$dir/lib @OPENHBCI_LIB@"
++	    result="$result -L@libdir@ @OPENHBCI_LIB@"
+ 	    ;;
+         --plugins)
+             result="$result @PLUGIN_PATH@/@OPENHBCI_SO_VERSION@"
