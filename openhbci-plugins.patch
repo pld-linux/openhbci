@@ -1,0 +1,11 @@
+--- openhbci-0.9.17/configure.in.orig	2004-08-11 21:13:07.000000000 +0200
++++ openhbci-0.9.17/configure.in	2005-03-27 15:09:54.737652056 +0200
+@@ -416,7 +416,7 @@
+ 
+ AC_MSG_CHECKING(if plugin loading is supported)
+ case `basename $CC` in 
+-  gcc*) 
++  *gcc*) 
+      gccversion=`$CC --version`
+      case $gccversion in
+        0.*)
