@@ -66,7 +66,8 @@ rm -f missing
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	 --with-openssl-libs=%{_libdir}
 %{__make}
 
 %install
