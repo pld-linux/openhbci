@@ -2,7 +2,7 @@ Summary:	HBCI - HomeBanking Computer Interface
 Summary(pl):	HBCI - komputerowy interfejs do HomeBankingu
 Name:		openhbci
 Version:	0.9.14
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/openhbci/%{name}-%{version}.tar.gz
@@ -11,7 +11,7 @@ URL:		http://openhbci.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	openssl-devel >= 0.9.6m
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,7 +35,7 @@ banków oferuje operacje online poprzez HBCI.
 Summary:	HBCI - HomeBanking Computer Interface - development files
 Summary(pl):	Pliki programistyczne do interfejsu HBCI
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Development files for HBCI - HomeBanking Computer Interface.
@@ -48,7 +48,7 @@ HomeBankingu.
 Summary:	HBCI - HomeBanking Computer Interface - static libraries
 Summary(pl):	Statyczne biblioteki HBCI
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libraries for HBCI - HomeBanking Computer Interface.
