@@ -2,7 +2,7 @@ Summary:	HBCI - HomeBanking Computer Interface
 Summary(pl):	HBCI - komputerowy interfejs do HomeBankingu
 Name:		openhbci
 Version:	0.9.17
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Libraries
 # don't use 0.9.17-2 - it has older lt resources (and it's the only difference)
@@ -10,6 +10,7 @@ Source0:	http://dl.sourceforge.net/openhbci/%{name}-%{version}.tar.gz
 # Source0-md5:	4770d9119c0127555d9474a17538002f
 Patch0:		%{name}-plugins.patch
 Patch1:		%{name}-path.patch
+Patch2:		%{name}-am18.patch
 URL:		http://openhbci.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -66,6 +67,7 @@ Statyczne biblioteki HBCI - komputerowego interfejsu do HomeBankingu.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
