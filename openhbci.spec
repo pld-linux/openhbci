@@ -68,7 +68,8 @@ rm -f missing
 %{__autoheader}
 %{__automake}
 %configure \
-	 --with-openssl-libs=%{_libdir}
+	--with-openssl-libs=%{_libdir} \
+	--with-plugin-path=%{_libdir}/%{name}/plugins
 %{__make}
 
 %install
