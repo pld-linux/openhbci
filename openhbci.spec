@@ -1,17 +1,20 @@
 Summary:	HBCI - HomeBanking Computer Interface
 Summary(pl):	HBCI - komputerowy interfejs do HomeBankingu
 Name:		openhbci
-Version:	0.9.14
-Release:	3
+Version:	0.9.17
+Release:	1
 License:	GPL v2
 Group:		Libraries
+# don't use 0.9.17-2 - it has older lt resources (and it's the only difference)
 Source0:	http://dl.sourceforge.net/openhbci/%{name}-%{version}.tar.gz
-# Source0-md5:	ae97513913683dbb921c0391760a59b1
+# Source0-md5:	4770d9119c0127555d9474a17538002f
+Patch0:		%{name}-plugins.patch
+Patch1:		%{name}-path.patch
 URL:		http://openhbci.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
+BuildRequires:	libstdc++-devel >= 3.0.0
+BuildRequires:	libtool >= 2:1.5
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,6 +40,8 @@ Summary:	HBCI - HomeBanking Computer Interface - development files
 Summary(pl):	Pliki programistyczne do interfejsu HBCI
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libstdc++-devel >= 3.0.0
+Requires:	openssl-devel >= 0.9.7d
 
 %description devel
 Development files for HBCI - HomeBanking Computer Interface.
@@ -59,9 +64,10 @@ Statyczne biblioteki HBCI - komputerowego interfejsu do HomeBankingu.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -78,6 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -f $RPM_BUILD_ROOT%{_libdir}/openhbci/plugins/*/media/*.{la,a}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -87,18 +95,22 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libopenhbci.so.*.*.*
 %dir %{_libdir}/openhbci
-%{_libdir}/openhbci/*
+%dir %{_libdir}/openhbci/plugins
+%dir %{_libdir}/openhbci/plugins/*
+%dir %{_libdir}/openhbci/plugins/*/media
+%attr(755,root,root) %{_libdir}/openhbci/plugins/*/media/rdhfile.so*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_aclocaldir}/*
+%attr(755,root,root) %{_bindir}/openhbci-config
+%attr(755,root,root) %{_libdir}/libopenhbci.so
+%{_libdir}/libopenhbci.la
+%{_includedir}/openhbci.h
+%{_includedir}/openhbci
+%{_aclocaldir}/openhbci.m4
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libopenhbci.a
