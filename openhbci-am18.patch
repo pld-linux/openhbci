@@ -1,0 +1,11 @@
+--- openhbci-0.9.17/openhbci.m4.orig	2003-05-12 11:19:00.000000000 +0200
++++ openhbci-0.9.17/openhbci.m4	2005-03-27 22:56:25.962339096 +0200
+@@ -5,7 +5,7 @@
+ dnl AM_PATH_OPENHBCI([MINIMUM-VERSION, [ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]]])
+ dnl Test for OPENHBCI, and define OPENHBCI_CFLAGS, OPENHBCI_CXXFLAGS and OPENHBCI_LIBS
+ dnl
+-AC_DEFUN(AM_PATH_OPENHBCI, [
++AC_DEFUN([AM_PATH_OPENHBCI], [
+ dnl 
+ dnl Get the c[xx]flags and libraries from openhbci-config
+ dnl
