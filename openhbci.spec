@@ -1,5 +1,5 @@
 Summary:	HBCI - HomeBanking Computer Interface
-Summary(pl):	HBCI - komputerowy interfejs do HomeBankingu
+Summary(pl.UTF-8):   HBCI - komputerowy interfejs do HomeBankingu
 Name:		openhbci
 Version:	0.9.18
 Release:	1
@@ -27,18 +27,18 @@ between online banking applications and the credit institutes'
 servers. In Germany, roughly half of all banks offer online banking
 through HBCI, which are approximately 2000 banks.
 
-%description -l pl
-HBCI (HomeBanking Computer Interface) to niezale¿ny od banku standard
+%description -l pl.UTF-8
+HBCI (HomeBanking Computer Interface) to niezaleÅ¼ny od banku standard
 przeprowadzania operacji bankowych online, rozwijany przez niemiecki
 centralny komitet bankowy ZKA (Zentraler Kredit-Ausschuss). Jest to
-publicznie dostêpna specyfikacja definiuj±ca komunikacjê pomiêdzy
-aplikacjami bankowymi dzia³aj±cymi online i serwerami instytucji
-kredytowych. W Niemczech z grubsza po³owa (oko³o 2000) wszystkich
-banków oferuje operacje online poprzez HBCI.
+publicznie dostÄ™pna specyfikacja definiujÄ…ca komunikacjÄ™ pomiÄ™dzy
+aplikacjami bankowymi dziaÅ‚ajÄ…cymi online i serwerami instytucji
+kredytowych. W Niemczech z grubsza poÅ‚owa (okoÅ‚o 2000) wszystkich
+bankÃ³w oferuje operacje online poprzez HBCI.
 
 %package devel
 Summary:	HBCI - HomeBanking Computer Interface - development files
-Summary(pl):	Pliki programistyczne do interfejsu HBCI
+Summary(pl.UTF-8):   Pliki programistyczne do interfejsu HBCI
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gwenhywfar-devel >= 1.0.0
@@ -48,20 +48,20 @@ Requires:	openssl-devel >= 0.9.7d
 %description devel
 Development files for HBCI - HomeBanking Computer Interface.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Pliki programistyczne dla HBCI - komputerowego interfejsu do
 HomeBankingu.
 
 %package static
 Summary:	HBCI - HomeBanking Computer Interface - static libraries
-Summary(pl):	Statyczne biblioteki HBCI
+Summary(pl.UTF-8):   Statyczne biblioteki HBCI
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libraries for HBCI - HomeBanking Computer Interface.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki HBCI - komputerowego interfejsu do HomeBankingu.
 
 %prep
