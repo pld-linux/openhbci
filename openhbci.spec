@@ -1,5 +1,5 @@
 Summary:	HBCI - HomeBanking Computer Interface
-Summary(pl.UTF-8):   HBCI - komputerowy interfejs do HomeBankingu
+Summary(pl.UTF-8):	HBCI - komputerowy interfejs do HomeBankingu
 Name:		openhbci
 Version:	0.9.18
 Release:	1
@@ -38,7 +38,7 @@ banków oferuje operacje online poprzez HBCI.
 
 %package devel
 Summary:	HBCI - HomeBanking Computer Interface - development files
-Summary(pl.UTF-8):   Pliki programistyczne do interfejsu HBCI
+Summary(pl.UTF-8):	Pliki programistyczne do interfejsu HBCI
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gwenhywfar-devel >= 1.0.0
@@ -54,7 +54,7 @@ HomeBankingu.
 
 %package static
 Summary:	HBCI - HomeBanking Computer Interface - static libraries
-Summary(pl.UTF-8):   Statyczne biblioteki HBCI
+Summary(pl.UTF-8):	Statyczne biblioteki HBCI
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
